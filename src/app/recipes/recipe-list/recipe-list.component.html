@@ -5,6 +5,14 @@
   </div>
   <div class="col-xs-6"></div>
 </div>
+<hr>
+<div class="row">
+  <col class="col-xs-12 mt-4">
+    <app-recipe-item *ngFor="let recipe of recipes;let i = index;" class="border border-primary rounded mx-2 m-1 p-4"
+    style="background-color: #e3f2fd;"
+    [recipe]="recipe"
+    (recipeSelected)="onRecipeSelected(recipe)"></app-recipe-item>
+</div>
 <!-- <div class="row my-4" *ngFor="let recipe of recipes">
   <div class="col-6 mr-auto">
     <h4>{{ recipe.name }}</h4>
@@ -14,19 +22,11 @@
     <img class="img-thumbnail" [src]="recipe.imagePath">
   </div>
 </div> -->
-<div *ngFor="let recipe of recipes" class="border border-primary rounded mx-2 my-4 p-2" style="background-color: #e3f2fd;">
-  <a href="#">
-    <div class="row my-4">
-      <div class="col-6">
-        <h4>{{ recipe.name }}</h4>
-        <p>{{ recipe.description }}</p>
-      </div>
-      <div class="col-6">
-        <img class="img-thumbnail" [src]="recipe.imagePath">
-      </div>
-    </div>
-  </a>
-</div>
+
+<!-- <div *ngFor="let recipe of recipes" class="border border-primary rounded mx-2 my-4 p-2" style="background-color: #e3f2fd;">
+
+</div> -->
+
 
 
 
